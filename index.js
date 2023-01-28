@@ -12,12 +12,7 @@ let TIMERTIME = 120;
 
 const server = http.createServer(app)
 
-const io = new Server(server, {
-  cors: {
-        origin: "https://test-timer-client.vercel.app/",
-        methods: ['GET', 'POST'],
-      }
-});
+const io = new Server(server);
 
 io.on("connection", (socket) => {
   let userJoined = {id: socket.id, price: 5000, date: 15, assurance: 12, percent: 100, improvement: "-", timer: false, name: `Вы: ${socket.id}`}
