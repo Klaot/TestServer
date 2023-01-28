@@ -4,8 +4,10 @@ const app = express();
 const http = require('http');
 const {Server} = require('socket.io');
 const cors = require('cors');
+
 app.use(cors());
-app.options('*', cors())
+app.options('https://test-timer-client.vercel.app/', cors())
+
 let TIMERTIME = 120;
 
 const server = http.createServer(app)
